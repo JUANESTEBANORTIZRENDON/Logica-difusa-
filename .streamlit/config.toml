@@ -1,0 +1,16 @@
+[theme]
+primaryColor = "#B91C1C"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#FEF2F2"
+textColor = "#1F2937"
+font = "sans serif"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+# Oculta el menú de desarrollo de Streamlit para los usuarios del aplicativo.
+toolbarMode = "minimal"

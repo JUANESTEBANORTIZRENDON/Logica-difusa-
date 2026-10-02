@@ -1,0 +1,13 @@
+# Render Blueprint: crear con New > Blueprint y conectar este repositorio.
+services:
+  - type: web
+    name: cardiolab
+    runtime: python
+    plan: free
+    buildCommand: python -m pip install -r requirements.txt && python -m pytest -q
+    startCommand: python -m streamlit run app.py --server.address=0.0.0.0 --server.port=$PORT --server.headless=true --server.fileWatcherType=none
+    healthCheckPath: /_stcore/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
